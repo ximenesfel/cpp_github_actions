@@ -9,11 +9,13 @@ jobs:
         username: ${{ github.actor }}
         password: ${{ secrets.ghcr_token }}
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
+        with:
+          path: /github/home/
 
       - name: Build code
         run: |
-          find / -name cpp_github_actions
+          ls -la
           # cd ~
           # mkdir build
           # cd ~/build
