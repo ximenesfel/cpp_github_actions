@@ -61,7 +61,7 @@ add_custom_command(TARGET coverage
     COMMAND echo "=================== LCOV ===================="
     COMMAND echo "-- Passing lcov tool under code coverage"
     COMMAND lcov --capture --directory ../ --output-file lcoverage/main_coverage_all.info
-    COMMAND lcov -r lcoverage/main_coverage_all.info "/root/app/test/src/*" "/usr/local/include/gtest/*" "/usr/local/include/gtest/**/*" "/usr/local/include/c++/8.4.0/**"  "/usr/local/include/c++/8.4.0/**/*" -o lcoverage/main_coverage_filtered.info
+    COMMAND lcov -r lcoverage/main_coverage_all.info "**/test/**" "**/include/**"  -o lcoverage/main_coverage_filtered.info
     COMMAND echo "-- Generating HTML output files"
     COMMAND genhtml lcoverage/main_coverage_filtered.info --output-directory lcoverage
 
