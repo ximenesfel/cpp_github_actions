@@ -13,8 +13,10 @@ jobs:
 
       - name: Build code
         run: |
-          cp -r $GITHUB_WORKSPACE .
-          cd ~
-          mkdir build
-          cd ~/build
-          cmake .. && make
+          ls -la ~
+          # mkdir ~/app
+          # cd ~/app
+          # cp -r $GITHUB_WORKSPACE .
+          # mkdir build
+          # cd ~/app/build
+          # cmake .. && make
