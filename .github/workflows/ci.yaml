@@ -10,13 +10,11 @@ jobs:
         password: ${{ secrets.ghcr_token }}
     steps:
       - uses: actions/checkout@v2
-        with:
-          path: /github/home/
 
       - name: Build code
         run: |
-          ls -la
-          # cd ~
-          # mkdir build
-          # cd ~/build
-          # cmake .. && make
+          cp -r $GITHUB_WORKSPACE .
+          cd ~
+          mkdir build
+          cd ~/build
+          cmake .. && make
