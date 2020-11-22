@@ -10,14 +10,10 @@ jobs:
         password: ${{ secrets.ghcr_token }}
     steps:
       - uses: actions/checkout@v1
-      - name: Install package dependencies
+
+      - name: Build code
         run: |
-          apt-get update
-          apt install -y gcovr lcov libboost-all-dev wget unzip zip
-
-
-      - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v1
-        with:
-          token: ${{ secrets.CODECOV_TOKEN }}
-          directory: ~/coverage
+          cd ~
+          mkdir build
+          cd ~/build
+          cmake .. && make
