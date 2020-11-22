@@ -13,7 +13,8 @@ jobs:
 
       - name: Build code
         run: |
-          cd ~
-          mkdir build
-          cd ~/build
-          cmake .. && make
+          ls -la ~
+          # cd ~
+          # mkdir build
+          # cd ~/build
+          # cmake .. && make
