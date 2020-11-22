@@ -13,7 +13,7 @@ jobs:
 
       - name: Build code
         run: |
-          ls -la ~
+          find / -name cpp_github_actions
           # cd ~
           # mkdir build
           # cd ~/build
