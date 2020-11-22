@@ -16,6 +16,7 @@ jobs:
           mkdir ~/app
           cd ~/app
           cp -r $GITHUB_WORKSPACE .
-          ls -la ~/app
-          # cd ~/app/build
-          # cmake .. && make
+          cd ~/app/cpp_github_actions
+          mkdir build
+          cd build
+          cmake .. && make
