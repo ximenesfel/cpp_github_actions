@@ -3,7 +3,7 @@ on: [push]
 jobs:    
   build:
     runs-on: ubuntu-18.04
-    container: docker.pkg.github.com/sujaypillai/buildxdemo/demo:latest
+    container: docker.pkg.github.com/ximenesfel/cpp_github_actions/cpp:latest
     steps:
       - uses: actions/checkout@v1
       - name: Install package dependencies
