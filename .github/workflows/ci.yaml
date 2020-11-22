@@ -20,3 +20,17 @@ jobs:
           mkdir build
           cd build
           cmake .. && make
+
+      - name: Run test and codecoverage
+        run: |
+          cd ~/app/cpp_github_actions/test
+          mkdir build
+          cd build
+          cmake ..
+          make coverage
+
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v1
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          directory: ~/app/cpp_github_actions/test/build/lcoverage
